@@ -1,2 +1,2 @@
-# microservice-app
-Car Rental and Payment
+# payment-app
+Car Rental and Payment Project
