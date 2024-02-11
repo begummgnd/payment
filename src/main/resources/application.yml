@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    password: root
+    url: jdbc:postgresql://localhost:8081/payment
+    username: root
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    showSql: true

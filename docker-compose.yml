@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: payment
+    ports:
+      - '8081:5432'
+    volumes:
+      - payment-postgres-volume:/var/lib/postgresql/data
+    restart: always
+
+  s-pgadmin:
+    container_name: pgadmin-payment
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: postgresMail@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: postgres1234
+    ports:
+      - '5050:80'
+    depends_on:
+      - db
+
+volumes:
+  payment-postgres-volume:
+
+
+
